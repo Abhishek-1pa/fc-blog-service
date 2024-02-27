@@ -33,5 +33,5 @@ def get_app():
     return "hey this is blog page"
 
 
-if __name__ == "__main__":
-    uvicorn.run("app.main:app", host="0.0.0.0", port=8002, reload=True)
+# if __name__ == "__main__":
+#     uvicorn.run("app.main:app", host="0.0.0.0", port=8002, reload=True)
