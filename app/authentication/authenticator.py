@@ -5,7 +5,7 @@ from .. import models
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 IAM_SERVICE_DEV = "http://localhost:8000/get_current_user"
-IAM_SERVICE_PROD = "https://iam-service-url/get_current_user"
+IAM_SERVICE_PROD = "https://iam.forge-code.com/get_current_user"
 
 async def authenticate_with_iam(token: str):
     async with httpx.AsyncClient() as client:

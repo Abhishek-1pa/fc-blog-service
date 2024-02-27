@@ -18,7 +18,6 @@ async def create_blog(
 ):
     tags = blog.tags
     tag_ids = []
-    print(current_user)
     try:
         for tag_name in tags:
             tag = db.query(models.Tag).filter(models.Tag.name == tag_name).first()
