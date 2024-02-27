@@ -32,5 +32,5 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8002", "--reload
 # This will ensure the container restarts automatically when the host computer restarts.
 # For more control over restart policies, you can explore other options like "unless-stopped" or "on-failure".
 # docker build -t blog-service .
-# docker run -d --restart=always --name blog-service -p 8080:8002 blog-service
+# docker run -d --restart=always --name blog-service -p 8002:8002 blog-service
 

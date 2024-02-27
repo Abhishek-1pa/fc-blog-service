@@ -10,7 +10,7 @@ IAM_SERVICE_PROD = "https://iam-service-url/get_current_user"
 async def authenticate_with_iam(token: str):
     async with httpx.AsyncClient() as client:
         headers = {"Authorization": f"Bearer {token}"}
-        response = await client.post(IAM_SERVICE_DEV, headers=headers)
+        response = await client.post(IAM_SERVICE_PROD, headers=headers)
         if response.status_code != 200:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
         
