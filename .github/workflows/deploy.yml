@@ -21,5 +21,5 @@ jobs:
       - name: Deploy to Google Cloud VM
         run: |
           ssh -i ~/.ssh/id_rsa ${{secrets.SSH_USERNAME}}@${{secrets.SERVER_IP}} '
-            sudo ./deploy_iam.sh
+            sudo ./deploy_blog.sh
           '
