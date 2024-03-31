@@ -23,7 +23,7 @@ class Blog(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     author = Column(Integer, primary_key=False, nullable=False)  # Assuming author_id references User table
     title = Column(String, nullable=False)
-    content = Column(JSONB, nullable=False)
+    content = Column(String, nullable=False)
     likes = Column(Integer, primary_key=False, nullable=False, default=0)
     dislikes = Column(Integer, primary_key=False, nullable=False, default=0)
     published_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())

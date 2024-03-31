@@ -21,7 +21,7 @@ class CommentCreated(BaseModel):
 
 class BlogCreate(BaseModel):
     title:str
-    content:Dict
+    content:str
     tags : List[str]
     thumbnail_id: int
     
@@ -29,7 +29,7 @@ class BlogCreated(BaseModel):
     id:int
     author:int
     title:str
-    content:Dict
+    content:str
     likes:int
     dislikes:int
     published_at:datetime
@@ -40,7 +40,7 @@ class BlogCreated(BaseModel):
 class BlogUpdate(BaseModel):
     title:str
     id:int
-    content:Dict
+    content:str
     tags : List[str]
     thumbnail_id : int
     
