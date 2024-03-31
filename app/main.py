@@ -11,7 +11,7 @@ from app.routers import blog
 import uvicorn
 from starlette.middleware.base import BaseHTTPMiddleware
 # Create the FastAPI app
-app = FastAPI(debug=True)
+app = FastAPI()
 origins = ["*"]
 
 # Add CORS middleware
@@ -40,7 +40,7 @@ class RequestLoggerMiddleware(BaseHTTPMiddleware):
         return response
 
 
-app.add_middleware(RequestLoggerMiddleware)
+# app.add_middleware(RequestLoggerMiddleware)
 
 
 app.include_router(
