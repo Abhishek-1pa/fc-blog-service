@@ -14,6 +14,12 @@ from starlette.middleware.base import BaseHTTPMiddleware
 app = FastAPI()
 origins = ["*"]
 
+app.include_router(
+    blog.router
+)
+
+
+
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
@@ -41,11 +47,6 @@ class RequestLoggerMiddleware(BaseHTTPMiddleware):
 
 
 # app.add_middleware(RequestLoggerMiddleware)
-
-
-app.include_router(
-    blog.router
-)
 
 
 
