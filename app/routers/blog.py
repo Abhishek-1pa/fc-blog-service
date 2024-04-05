@@ -279,6 +279,7 @@ async def addComment(
 async def save_to_image(file: UploadFile, db: Session, user: models.User):
 
     if file.content_type not in ("image/jpeg", "image/png", "image/jpg"):
+        print("1")
         raise HTTPException(status_code=400, detail="Only JPEG and PNG images allowed")
     
     try:
@@ -305,6 +306,7 @@ async def save_to_image(file: UploadFile, db: Session, user: models.User):
     
     except Exception as e:
         db.rollback()
+        print(2)
         raise HTTPException(status_code=500, detail=f"Error uploading image: {str(e)}")
         
         
