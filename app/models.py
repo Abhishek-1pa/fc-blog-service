@@ -27,7 +27,7 @@ class Blog(Base):
     likes = Column(Integer, primary_key=False, nullable=False, default=0)
     dislikes = Column(Integer, primary_key=False, nullable=False, default=0)
     published_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=func.now())
-    thumbnail_id = Column(Integer, default=1)
+    thumbnail_url = Column(String)
     
     # Many-to-many relationship with Tag using an associative table
     tags = relationship("Tag", secondary="blogs_tags", backref="blogs", cascade="all, delete")

@@ -23,7 +23,7 @@ class BlogCreate(BaseModel):
     title:str
     content:str
     tags : List[str]
-    thumbnail_id: int
+    thumbnail_url: str
     
 class BlogCreated(BaseModel):
     id:int
@@ -35,12 +35,12 @@ class BlogCreated(BaseModel):
     published_at:datetime
     tags:List[TagCreated]
     comments:List[CommentCreated]
-    thumbnail_id:Optional[int]
+    thumbnail_url:Optional[str]
     
 class BlogUpdate(BaseModel):
     title:str
     id:int
     content:str
     tags : List[str]
-    thumbnail_id : int
+    thumbnail_url : Optional[str]
     

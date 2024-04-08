@@ -41,7 +41,7 @@ async def create_blog(
             author=current_user.id,
             title=blog.title,
             content=blog.content,
-            thumbnail_id = blog.thumbnail_id
+            thumbnail_url = blog.thumbnail_url
         )
         db.add(new_blog)
         db.flush()  # Flush the changes to generate the blog ID but don't commit yet
@@ -101,8 +101,8 @@ async def update_blog(
             existing_blog.title = blog.title
         if blog.content:
             existing_blog.content = blog.content
-        if blog.thumbnail_id:
-            existing_blog.thumbnail_id = blog.thumbnail_id
+        if blog.thumbnail_url:
+            existing_blog.thumbnail_url = blog.thumbnail_url
             
         existing_blog.tags.clear()
         # Update tags associated with the blog
